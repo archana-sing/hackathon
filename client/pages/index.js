@@ -1,5 +1,7 @@
 import React from 'react'
 import Chathome from '../Components/Chathome'
+import { Container } from '../Components/Container'
+import HomePage from '../Components/Homepage'
 import Login from '../Components/Login'
 import AuthContext from '../context/authContext'
 
@@ -13,8 +15,7 @@ const index = () => {
   }
   return (
     <div>
-     <Chathome/>
-     
+    <HomePage/>
     </div>
   )
 }

@@ -55,6 +55,12 @@ io.on("connection" , socket => {
                 users : getRoomUsers(user.room)
             })
         })
+
+    })
+
+    //listen for draw data
+    socket.on("mouse", (data) => {
+        socket.broadcast.emit("mouse", data)
     })
 })
 
