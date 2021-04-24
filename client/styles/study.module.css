@@ -1,0 +1,26 @@
+.container_main{
+    background : tomato;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.container{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    margin: 30px 100px;
+    line-height: 1.5
+}
+.img{
+    border-radius: 8px;
+}
+.headings{
+    font-weight: 400;
+    margin: 20px 0;
+}
+.para{
+    margin-top: 1.2em;
+    font-weight: 500;
+    margin-bottom: 1.2em;
+    font-size: 15px;
+}
