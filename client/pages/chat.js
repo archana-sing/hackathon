@@ -37,6 +37,7 @@ const chat = ({userame , room}) => {
     })
     return (
         <>
+        <div className = {Styles.container}>
         <div className={Styles.chat_container}>
            <main className={Styles.chat_main}>
                 <div className= {Styles.chat_sidebar} >
@@ -69,6 +70,7 @@ const chat = ({userame , room}) => {
                     <button className={Styles.btn} style = {{marginLeft : "60px"}}>Send</button>
                 </form>
             </div>
+        </div>
         </div>
     </>
     )
