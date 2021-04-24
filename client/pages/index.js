@@ -7,9 +7,9 @@ import HomePage from '../Components/Homepage'
 const index = () => {
   return (
     <div>
-     <Container/>
+     {/* <Container/> */}
      <Chathome/>
-     {/* <HomePage/> */}
+     <HomePage/>
     </div>
   )
 }

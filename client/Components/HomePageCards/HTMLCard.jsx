@@ -34,6 +34,15 @@ const useStyles = makeStyles({
     },
     white: {
         color: 'white'
+    },
+    classImg: {
+        width: "100%",
+        height: "100%"
+    },
+    quizBG: {
+        backgroundColor: 'white',
+        padding: 35,
+        borderRadius: 20
     }
   });
 

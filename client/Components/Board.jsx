@@ -2,18 +2,20 @@
 import React, { useEffect } from 'react';
 import styles from '../styles/Whiteboard.module.css';
 import io, { Socket } from 'socket.io-client';
-
+// import imageB from ''
 
 class Board extends React.Component {
 
     timeout;
+    // image;
+
     socket = io.connect("http://localhost:3001")
 
     constructor(props) {
         super(props)
 
         this.socket.on("mouse", function (drawingData){
-            let image = new Image();
+            let image = document.createElement("img")
             let canvas = document.querySelector("#board");
             let ctx = canvas.getContext('2d');
             image.onload = function() {
