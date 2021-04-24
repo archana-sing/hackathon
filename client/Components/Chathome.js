@@ -22,6 +22,7 @@ const Chathome = () => {
     return (
         <div>
             <button onClick={handleClick}>Join Chat</button>
+            
         </div>
     )
 }

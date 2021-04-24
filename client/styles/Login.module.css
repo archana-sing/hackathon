@@ -1,0 +1,46 @@
+.container{
+   background: #D9EEE1;
+   width: 100%;
+   height: 100vh;
+   padding-top: 90px;
+   
+}
+.heading{
+    padding: 20px;
+    background: #059862;
+	color: #fff;
+	font-size: 20px;
+    margin-bottom: 50px;
+}
+.btn{
+    margin-top: 30px;
+    border-radius: 8px;
+	cursor: pointer;
+	padding: 10px 20px;
+	background: #059862;
+	color: #fff;
+	border: 0;
+	font-size: 17px;
+}
+.label{
+    text-align: left;
+    margin-left: 45px;
+    margin-bottom: 20px;
+}
+.form{
+    padding-top: 0px;
+    background-color: #282A35;
+    color: white;
+    width: 600px;
+    margin : 0px auto;
+    padding: 40px;
+    border-radius: 8px;
+    text-align: center;
+}
+.form .input{
+    width: 80%;
+    border-radius: 8px;
+    border : 1px silver;
+    height: 20px;
+    padding : 20px;
+}
