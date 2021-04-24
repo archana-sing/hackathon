@@ -16,7 +16,7 @@ const index = () => {
   return (
     <div>
      {/* <Container/> */}
-     <Chathome/>
+     {/* <Chathome/> */}
      <HomePage/>
     </div>
   )

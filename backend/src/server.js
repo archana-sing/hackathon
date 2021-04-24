@@ -9,6 +9,12 @@ const {userJoin, getCurrentUser, userLeave, getRoomUsers} = require("./utils/use
 const io = socketio(server);
 const botname = "My Pathshala"
 
+app.use('/login', (req, res) => {
+    res.send({
+      token: '2365767654623432425'
+    });
+  });
+
 //run when client connects
 io.on("connection" , socket => {
     console.log("new client has been connected")
