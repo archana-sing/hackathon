@@ -36,14 +36,10 @@ const chat = ({userame , room}) => {
         })
     })
     return (
-        <div>
+        <>
         <div className={Styles.chat_container}>
-            <header className={Styles.chat_header}>
-                <h1><i className="fas fa-smile"></i>Chat App</h1>
-            </header>
-            <main className={Styles.chat_main}>
-                <div className= {Styles.chat_sidebar}>
-                    
+           <main className={Styles.chat_main}>
+                <div className= {Styles.chat_sidebar} >
                     <h2 className = {Styles.headings}>Users</h2>
                     <ul>
                     {roomUsers.map((user , i)=>(
@@ -74,7 +70,7 @@ const chat = ({userame , room}) => {
                 </form>
             </div>
         </div>
-    </div>
+    </>
     )
 }
 
