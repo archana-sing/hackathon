@@ -1,10 +1,12 @@
 const express = require("express");
 const http = require("http");
 const app = express();
-const socketio = require("socket.io")
+const server = http.createServer(app)
+
+// const socketio = require("socket.io")
 const formatMessage = require("./utils/message")
 const {userJoin, getCurrentUser, userLeave, getRoomUsers} = require("./utils/users")
-const io = socketio(server);
+//  const io = socketio(server);
 const botname = "My Pathshala"
 
 app.use('/login', (req, res) => {
@@ -12,7 +14,7 @@ app.use('/login', (req, res) => {
       token: '2365767654623432425'
     });
   });
-  const server = http.createServer(app)
+
 const io = require("socket.io")(server, {
 	cors: {
 		origin: "http://192.168.1.7:3001",
