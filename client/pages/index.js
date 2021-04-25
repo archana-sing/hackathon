@@ -1,9 +1,9 @@
 import React from 'react'
-import Chathome from '../Components/Chathome'
 import { Board } from '../Components/Whiteboard/Board'
 import HomePage from '../Components/Homepage'
 import Login from '../Components/Login'
 import AuthContext from '../context/authContext'
+import { Whiteboard } from '../Components/Whiteboard/Whiteboard'
 
 
 const index = () => {
@@ -11,6 +11,7 @@ const index = () => {
   if(token == null){
     return(
       <div>
+        <Whiteboard/>
         {/* <Board/> */}
         <HomePage/>
       </div>
