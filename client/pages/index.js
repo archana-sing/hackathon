@@ -22,7 +22,7 @@ const index = () => {
     <div>
       <Navbar></Navbar>
       <Whiteboard />
-      <Chathome />
+      {/* <Chathome /> */}
       <HomePage />
       <div className={style.video__wrap}>
         <VideoChat></VideoChat>
