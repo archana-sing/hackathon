@@ -11,7 +11,8 @@ const index = () => {
   if(token == null){
     return(
       <div>
-        <Board/>
+        {/* <Board/> */}
+        <HomePage/>
       </div>
     )
   

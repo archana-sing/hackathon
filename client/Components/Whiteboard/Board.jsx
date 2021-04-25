@@ -7,7 +7,7 @@ const Board = () => {
         <>
             <div className={styles.container}>
                 <div className={styles.color__picker}>
-                    <input type="color"/>
+                    {/* <input type="color"/> */}
                     <div className={styles.board__container}>
                         <Sheet></Sheet>
                     </div>
