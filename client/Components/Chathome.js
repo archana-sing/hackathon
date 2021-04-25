@@ -19,9 +19,29 @@ const Chathome = () => {
         })
        
       }
+<<<<<<< HEAD
     return (
         <div>
             <button onClick={handleClick}>Join Chat</button>
+=======
+      const quizHandler = ()=>{
+        router.push({
+            pathname : "/quiz",
+        })
+        
+      }
+      const learnHandler = ()=>{
+        router.push({
+            pathname : "/htmlstudy",
+        })
+        
+      }
+    return (
+        <div>
+            <button onClick={handleClick}>Join Chat</button>
+            <button onClick={quizHandler}>Take Quiz</button>
+            <button onClick={learnHandler}>Learn HTML</button>
+>>>>>>> 50e90d4138c2455e725a7544c28995bc5b2c6c7e
         </div>
     )
 }
