@@ -1,5 +1,7 @@
 import React from 'react'
 import AuthContext from '../context/authContext';
+import Styles from '../styles/Login.module.css'
+import { useRouter } from 'next/router'
 
 async function loginUser(credentials) {
     return fetch('http://localhost:3001/login', {
@@ -13,8 +15,10 @@ async function loginUser(credentials) {
    }
 
 const login = () => {
-const [token , setToken] = React.useContext(AuthContext)
-const [username, setUserName] = React.useState();
+  const router = useRouter();
+const [token , settoken ] = React.useContext(AuthContext)
+const [username , setUserName] = React.useContext(AuthContext)
+// const [username, setUserName] = React.useState();
   const [password, setPassword] = React.useState();
   const handleSubmit = async e => {
     e.preventDefault();
@@ -22,26 +26,33 @@ const [username, setUserName] = React.useState();
       username,
       password
     });
-    setToken(token);
+    settoken(token);
+    console.log(token)
+    router.push({
+      path : "/chat"
+    })
+    
   }
     return (
-        
-        <div>
-            <h1>Please Log In</h1>
-            <form onSubmit={handleSubmit}>
+        <>
+        <div className = {Styles.container}>
+            
+            <form onSubmit={handleSubmit} className = {Styles.form}>
+                <div className = {Styles.heading}>Please Log In</div>
                 <label>
-                <p>Username</p>
-                <input type="text" onChange={e => setUserName(e.target.value)}/>
+                <p className = {Styles.label}>Username</p>
+                <input className = {Styles.input} type="text" onChange={e => setUserName(e.target.value)}/>
                 </label>
                 <label>
-                <p>Password</p>
-                <input type="password" onChange={e => setPassword(e.target.value)}/>
+                <p className = {Styles.label}>Password</p>
+                <input className = {Styles.input} type="password" onChange={e => setPassword(e.target.value)}/>
                 </label>
                 <div>
-                <button type="submit">Submit</button>
+                <button className = {Styles.btn} type="submit">Submit</button>
                 </div>
             </form>
         </div>
+        </>
     )
 }
 

@@ -7,11 +7,11 @@ const ENDPOINT = 'http://localhost:3001';
 const socket = socketIOClient(ENDPOINT)
 
 function MyApp({ Component, pageProps }) {
-  const [token , setToken] = React.useState(null);
-
+  const [token , settoken] = React.useState(null);
+  const [username , setUserName] = React.useState("archana")
   return (<>
             <SocketContext.Provider value = {socket}>
-              <AuthContext.Provider value = {[token , setToken]}>
+              <AuthContext.Provider value = {[token , settoken] , [username , setUserName]}>
               <Component {...pageProps} />
               </AuthContext.Provider>
             </SocketContext.Provider>

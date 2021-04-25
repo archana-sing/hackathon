@@ -1,6 +1,11 @@
+import React from 'react';
+import { useRouter } from 'next/router'
+import SocketContext from '../../context/socketContext'
+import AuthContext from '../../context/authContext'
 import { Button, Typography } from '@material-ui/core';
 import { Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import Link from 'next/link'
 
 const useStyles = makeStyles({
     cardBtn: {
@@ -48,6 +53,44 @@ const useStyles = makeStyles({
 
 const HTMLCard = () => {
     const classes = useStyles();
+    const router = useRouter();
+    const socket = React.useContext(SocketContext)
+    const [token , setToken ] = React.useContext(AuthContext)
+    const [username , setUserName] = React.useContext(AuthContext)
+    const room = "HTML"
+    // React.useEffect(() => {
+    //     if (!token) {
+    //       router.push('/login')
+    //     }
+    //   }, [token])
+    const handleClick = (e) => {
+        e.preventDefault()
+        socket.emit("joinRoom" , {username , room})
+        socket.on("message" , message => {
+            console.log(message)
+        })
+        router.push({
+            pathname : "/chat",
+            state : {username , room}
+        })
+       
+      }
+    const learnHandler = ()=>{
+        
+            router.push({
+                pathname : "/htmlstudy",
+            })
+        
+        
+    }
+    const quizHandler = ()=>{
+      router.push({
+        pathname : "/quiz",
+        })
+        
+        
+        
+      }
     return (
         <Grid container className={classes.cardBG}>
             <Grid className={classes.cardBG} md={6} justify="center" align="center">
@@ -59,14 +102,20 @@ const HTMLCard = () => {
                         The language for building web pages
                     </Typography>
                 </Grid>
-                <Grid container  direction="column" justify="space-between" md={5} className={classes.cardBtnSection}>
-                    <Button className={classes.cardBtn+" "+classes.green} variant="contained" >
+                    {!token ?  <Link href="/login">login</Link> :  
+                    <Grid container  direction="column" justify="space-between" md={5} className={classes.cardBtnSection}>
+                    <Button className={classes.cardBtn+" "+classes.green} variant="contained" onClick = {learnHandler}>
                         <Typography className={classes.white}><b>Learn HTML</b></Typography>
                     </Button>
-                    <Button className={classes.cardBtn} variant="contained" >
-                        <Typography className={classes.black}><b>HTML Reference</b></Typography>
+                    <Button className={classes.cardBtn} variant="contained" onClick = {quizHandler}>
+                        <Typography className={classes.black}><b>Take Quiz</b></Typography>
+                    </Button>
+                    <Button className={classes.cardBtn+" "+classes.green} variant="contained" onClick = {handleClick}>
+                        <Typography className={classes.white}><b>Discussion</b></Typography>
                     </Button>
                 </Grid>
+}
+                
             </Grid>
         </Grid>
     )
