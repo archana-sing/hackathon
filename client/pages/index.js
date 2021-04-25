@@ -21,11 +21,12 @@ const index = () => {
   return (
     <div>
       <Navbar></Navbar>
-      <Whiteboard />
+      
       {/* <Chathome /> */}
       <HomePage />
       <div className={style.video__wrap}>
         <VideoChat></VideoChat>
+        <Whiteboard />
       </div>
 
       <Footer></Footer>
