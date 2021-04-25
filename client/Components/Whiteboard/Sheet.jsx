@@ -1,28 +1,27 @@
-
 import React, { useEffect } from 'react';
-import styles from '../styles/Whiteboard.module.css';
-import io, { Socket } from 'socket.io-client';
+import styles from '../../styles/Whiteboard.module.css';
+// import io, { Socket } from 'socket.io-client';
 // import imageB from ''
 
-class Board extends React.Component {
+class Sheet extends React.Component {
 
-    timeout;
+    // timeout;
     // image;
 
-    socket = io.connect("http://localhost:3001")
+    // socket = io.connect("http://localhost:3001")
 
     constructor(props) {
         super(props)
 
-        this.socket.on("mouse", function (drawingData){
-            let image = document.createElement("img")
-            let canvas = document.querySelector("#board");
-            let ctx = canvas.getContext('2d');
-            image.onload = function() {
-                ctx.drawImage(image, 0, 0);
-            };
-            image.src = drawingData
-        })
+        // this.socket.on("mouse", function (drawingData){
+        //     let image = document.createElement("img")
+        //     let canvas = document.querySelector("#board");
+        //     let ctx = canvas.getContext('2d');
+        //     image.onload = function() {
+        //         ctx.drawImage(image, 0, 0);
+        //     };
+        //     image.src = drawingData
+        // })
     }
 
     componentDidMount() {
@@ -65,7 +64,7 @@ class Board extends React.Component {
             canvas.removeEventListener('mousemove', onPaint, false);
         }, false);
     
-        var root = this;
+        // var root = this;
         var onPaint = function() {
             ctx.beginPath();
             ctx.moveTo(last_mouse.x, last_mouse.y);
@@ -73,9 +72,9 @@ class Board extends React.Component {
             ctx.closePath();
             ctx.stroke();
 
-            console.log("Sending: "+mouse.x+" , "+mouse.y);
-            let data = canvas.toDataURL('image/jpeg', 1.0)
-            root.socket.emit("mouse", data)
+            // console.log("Sending: "+mouse.x+" , "+mouse.y);
+            // let data = canvas.toDataURL('image/jpeg', 1.0)
+            // root.socket.emit("mouse", data)
         };
     
     }
@@ -91,4 +90,4 @@ class Board extends React.Component {
     }
 }
 
-export {Board}
+export {Sheet}
