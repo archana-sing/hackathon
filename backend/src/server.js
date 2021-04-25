@@ -1,6 +1,7 @@
 const express = require("express");
 const http = require("http");
 const app = express();
+const server = http.createServer(app)
 const socketio = require("socket.io")
 const formatMessage = require("./utils/message")
 const {userJoin, getCurrentUser, userLeave, getRoomUsers} = require("./utils/users")
@@ -12,7 +13,7 @@ app.use('/login', (req, res) => {
       token: '2365767654623432425'
     });
   });
-  const server = http.createServer(app)
+  
 
 
 //const cors = require("cors")

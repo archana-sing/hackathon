@@ -18,17 +18,18 @@ import Head from "next/head";
 
 const index = () => {
   const [token , settoken] = React.useContext(AuthContext);
-  if(token == null){
-    return(
-      <Login/>
-      )
-  }
+  // if(token == null){
+  //   return(
+  //     <Login/>
+  //     )
+  // }
   return (
     <div>
+      <Navbar></Navbar>
      {/* <Container/> */}
-     {/* <Chathome/> */}
+     <Chathome/>
      <HomePage/>
-     <Navbar></Navbar>
+     
     <div className={style.video__wrap}><VideoChat></VideoChat></div>
     
     <Footer></Footer>

@@ -12,7 +12,7 @@ import style from "./Styles/video.module.css";
 import { MdCall, MdCallEnd } from "react-icons/md";
 import { FiPhoneCall } from "react-icons/fi";
 
-const socket = io.connect("http://192.168.1.7:5000");
+const socket = io.connect("http://localhost:3001");
 function VideoChat() {
   const [me, setMe] = useState("");
   const [stream, setStream] = useState();
