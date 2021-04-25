@@ -15,7 +15,7 @@ app.use('/login', (req, res) => {
   const server = http.createServer(app)
 const io = require("socket.io")(server, {
 	cors: {
-		origin: "http://192.168.1.7:3000",
+		origin: "http://192.168.1.7:3001",
 		methods: [ "GET", "POST" ]
 	}
 })
@@ -48,7 +48,7 @@ io.on("connection" , socket => {
         //welcome new user
         socket.emit("message" ,formatMessage(botname , `${user.username} welcome to the ${user.room} group`) )
 
-server.listen(5000, () => console.log("server is running on port 5000"))
+// server.listen(5000, () => console.log("server is running on port 5000"))
         //broadcast when a user connects
         socket.broadcast.to(user.room).emit("message" , formatMessage(botname , `${user.username} has joined the discussion`))
 
