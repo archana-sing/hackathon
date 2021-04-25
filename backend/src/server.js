@@ -1,8 +1,6 @@
 const express = require("express");
 const http = require("http");
 const app = express();
-const server = http.createServer(app)
-//const cors = require("cors")
 const socketio = require("socket.io")
 const formatMessage = require("./utils/message")
 const {userJoin, getCurrentUser, userLeave, getRoomUsers} = require("./utils/users")
@@ -14,6 +12,31 @@ app.use('/login', (req, res) => {
       token: '2365767654623432425'
     });
   });
+  const server = http.createServer(app)
+const io = require("socket.io")(server, {
+	cors: {
+		origin: "http://192.168.1.7:3001",
+		methods: [ "GET", "POST" ]
+	}
+})
+io.on("connection", (socket) => {
+	socket.emit("me", socket.id)
+
+	socket.on("disconnect", () => {
+		socket.broadcast.emit("callEnded")
+	})
+
+	socket.on("callUser", (data) => {
+		io.to(data.userToCall).emit("callUser", { signal: data.signalData, from: data.from, name: data.name })
+	})
+
+	socket.on("answerCall", (data) => {
+		io.to(data.to).emit("callAccepted", data.signal)
+	})
+})
+
+//const cors = require("cors")
+
 
 //run when client connects
 io.on("connection" , socket => {
@@ -25,6 +48,7 @@ io.on("connection" , socket => {
         //welcome new user
         socket.emit("message" ,formatMessage(botname , `${user.username} welcome to the ${user.room} group`) )
 
+// server.listen(5000, () => console.log("server is running on port 5000"))
         //broadcast when a user connects
         socket.broadcast.to(user.room).emit("message" , formatMessage(botname , `${user.username} has joined the discussion`))
 
