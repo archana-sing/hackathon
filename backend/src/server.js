@@ -13,12 +13,7 @@ app.use('/login', (req, res) => {
     });
   });
   const server = http.createServer(app)
-const io = require("socket.io")(server, {
-	cors: {
-		origin: "http://192.168.1.7:3001",
-		methods: [ "GET", "POST" ]
-	}
-})
+
 
 //const cors = require("cors")
 
