@@ -1,16 +1,19 @@
 .video_container{
-  min-height: 900px;
+  min-height: 600px;
+  position: absolute;
+  /* margin: auto; */
+  width: 800px;
+  top:30px;
+  left:calc((50vw - 400px));
+  background-color:white;
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px 5px rgba(0, 0, 0, 0.349);
 }
 .video__wrap {
   position: relative;
   margin: auto;
   width: 800px;
   min-height: 610px;
-
-  /* display: flex; */
-  /* flex-direction:row;
-    justify-content: center;
-    align-items: center; */
 }
 .big_video {
   position: inherit;

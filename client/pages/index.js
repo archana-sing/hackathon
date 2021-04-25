@@ -6,13 +6,14 @@ import AuthContext from "../context/authContext";
 import VideoChat from "../Components/VideoChat";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
-import style from "../Components/styles/video.module.css";
+import style from "../Components/Styles/video.module.css";
 import Head from "next/head";
 
 import { Whiteboard } from "../Components/Whiteboard/Whiteboard";
 
 const index = () => {
   const [token, settoken] = React.useContext(AuthContext);
+  const [showVideo, setShowVideo] = React.useState(false);
   // if(token == null){
   //   return(
   //     <Login/>
@@ -21,13 +22,14 @@ const index = () => {
   return (
     <div>
       <Navbar></Navbar>
-      <Whiteboard />
+      {showVideo && (
+        <div className={style.video_container}>
+          <VideoChat></VideoChat>
+        </div>
+      )}
+      {!showVideo && <Whiteboard /> }
       {/* <Chathome /> */}
-      <HomePage />
-      <div className={style.video__wrap}>
-        <VideoChat></VideoChat>
-      </div>
-
+      <HomePage setShowVideo={setShowVideo} showVideo={showVideo} />
       <Footer></Footer>
     </div>
   );

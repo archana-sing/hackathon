@@ -2,10 +2,10 @@ import { CSS } from "./HomePageCards/CSS"
 import { HTML } from "./HomePageCards/HTML"
 import { JS } from "./HomePageCards/JS"
 import { SQL } from "./HomePageCards/SQL"
-function HomePage() {
+function HomePage({showVideo, setShowVideo}) {
     return (
       <div>
-        <HTML/>
+        <HTML showVideo={showVideo} setShowVideo={setShowVideo}/>
         <CSS/>
         <JS/>
         <SQL/>

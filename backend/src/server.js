@@ -5,7 +5,14 @@ const server = http.createServer(app)
 const socketio = require("socket.io")
 const formatMessage = require("./utils/message")
 const {userJoin, getCurrentUser, userLeave, getRoomUsers} = require("./utils/users")
-const io = socketio(server);
+// const io = socketio(server);
+const io = require("socket.io")(server, {
+	cors: {
+		origin: "http://localhost:3000",
+		methods: [ "GET", "POST" ]
+	}
+})
+
 const botname = "My Pathshala"
 
 app.use('/login', (req, res) => {

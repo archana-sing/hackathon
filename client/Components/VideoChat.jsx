@@ -98,7 +98,8 @@ function VideoChat() {
   };
 
   return (
-    <div className={style.video_container}>
+    // <div className={style.video_container}>
+       <div>
       <h1 style={{ textAlign: "center", color: "#fff" }}>Video Call</h1>
       <div className="container">
         <div className={style.video__wrap}>
