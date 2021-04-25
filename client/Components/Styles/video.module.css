@@ -1,7 +1,12 @@
+.video_container{
+  min-height: 900px;
+}
 .video__wrap {
   position: relative;
   margin: auto;
   width: 800px;
+  min-height: 610px;
+
   /* display: flex; */
   /* flex-direction:row;
     justify-content: center;

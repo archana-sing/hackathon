@@ -98,7 +98,7 @@ function VideoChat() {
   };
 
   return (
-    <>
+    <div className={style.video_container}>
       <h1 style={{ textAlign: "center", color: "#fff" }}>Video Call</h1>
       <div className="container">
         <div className={style.video__wrap}>
@@ -121,6 +121,7 @@ function VideoChat() {
                 playsInline
                 ref={userVideo}
                 autoPlay
+				muted
                 className={!toggleVideo ? style.big_video : style.small_video}
               />
             ) : null}
@@ -215,7 +216,7 @@ function VideoChat() {
           ) : null}
         </div> */}
       </div>
-    </>
+    </div>
   );
 }
 

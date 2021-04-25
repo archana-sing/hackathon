@@ -70,4 +70,14 @@
     text-align: center;
     position:relative;
     top:-5px;
+
+}
+.login_btn2{
+    background-color:#04aa6d;
+    border: none;
+    outline: none;
+    color: white;
+    font-size:18px;
+    font-weight:600;
+    
 }

@@ -26,11 +26,7 @@ const links2 = [
   {
     href: "/buycourses",
     title: "Buy Courses",
-  },
-  {
-    href: "/login",
-    title: "Log in",
-  },
+  }
 ];
 export default function Navbar() {
   return (
@@ -45,7 +41,9 @@ export default function Navbar() {
       <div className={style.nav__right}>
         {links2?.map(({ href, title }) => (
            <div> <Link href={href}>{title}</Link></div>
+           
         ))}
+        <div><button className={style.login_btn2}>Login</button></div>
       </div>
     </div>
   );
