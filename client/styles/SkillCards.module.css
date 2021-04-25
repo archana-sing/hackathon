@@ -1,0 +1,96 @@
+.cardDiv {
+    width: 50vw;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.cardWrapper {
+    width: 100vw;
+    height: fit-content;
+    display: flex;
+}
+
+.skill {
+    font-size: 80px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.tagline {
+    font-size: 20px;
+    margin: 10px;
+}
+
+.learnBtn, .quizBtn {
+    margin: 10px;
+    border-radius: 30px;
+    padding: 10px 20px;
+    outline: none;
+    border: none;
+    background-color: #059862;
+    width: 220px;
+    cursor: pointer;
+    color: white;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.learnBtn:hover {
+    opacity: 0.8;
+}
+
+.white {
+    color: white;
+}
+
+
+.htmlBG, .cssBG, .jsBG, .sqlBG {
+    background-color: #282A35;
+    width: 100%;
+    display: flex;
+}
+
+.cssBG {
+    background-color: #D9EEE1;
+}
+
+.jsBG {
+    background-color: #FFF4A3;
+}
+
+.sqlBG {
+    background-color: #FFC0C7;
+}
+
+.image {
+    width: 280px;
+}
+
+.quizDiv {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.imgcard {
+    background-color: white;
+    width: 40vw;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.quizBtn {
+    margin-top: 50px;
+}
+
+.black {
+    color: black;
+}

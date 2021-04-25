@@ -1,23 +1,18 @@
-import React from 'react'
-import Chathome from '../Components/Chathome'
-import { Container } from '../Components/Container'
-import HomePage from '../Components/Homepage'
-import Login from '../Components/Login'
-import AuthContext from '../context/authContext'
+import React from "react";
+import { Board } from "../Components/Whiteboard/Board";
+import HomePage from "../Components/Homepage";
+import Login from "../Components/Login";
+import AuthContext from "../context/authContext";
 import VideoChat from "../Components/VideoChat";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import style from "../Components/styles/video.module.css";
 import Head from "next/head";
 
-
-
-
-
-
+import { Whiteboard } from "../Components/Whiteboard/Whiteboard";
 
 const index = () => {
-  const [token , settoken] = React.useContext(AuthContext);
+  const [token, settoken] = React.useContext(AuthContext);
   // if(token == null){
   //   return(
   //     <Login/>
@@ -26,16 +21,16 @@ const index = () => {
   return (
     <div>
       <Navbar></Navbar>
-     {/* <Container/> */}
-     <Chathome/>
-     <HomePage/>
-     
-    <div className={style.video__wrap}><VideoChat></VideoChat></div>
-    
-    <Footer></Footer>
+      <Whiteboard />
+      <Chathome />
+      <HomePage />
+      <div className={style.video__wrap}>
+        <VideoChat></VideoChat>
+      </div>
+
+      <Footer></Footer>
     </div>
-  )
-}
+  );
+};
 
-export default index
-
+export default index;

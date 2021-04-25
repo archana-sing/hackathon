@@ -1,18 +1,16 @@
-import { CSSCard } from "./HomePageCards/CSSCard"
-import { HTMLCard } from "./HomePageCards/HTMLCard"
-import { JavaScriptCard } from "./HomePageCards/JavaScript"
-import { SQLCard } from "./HomePageCards/SQLCard"
-
+import { CSS } from "./HomePageCards/CSS"
+import { HTML } from "./HomePageCards/HTML"
+import { JS } from "./HomePageCards/JS"
+import { SQL } from "./HomePageCards/SQL"
 function HomePage() {
     return (
-      <>
-        <HTMLCard/>
-        <CSSCard/>
-        <JavaScriptCard/>
-        <SQLCard/>
-      </>
+      <div>
+        <HTML/>
+        <CSS/>
+        <JS/>
+        <SQL/>
+      </div>
     )
   }
   
   export default HomePage
-  
